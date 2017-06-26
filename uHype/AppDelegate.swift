@@ -17,7 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        
+        let storyBoard = UIStoryboard.init(name: "Registration", bundle: Bundle.main)
+        let registrationVC = storyBoard.instantiateInitialViewController()
+        self.window?.rootViewController = registrationVC
         return true
+        
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
