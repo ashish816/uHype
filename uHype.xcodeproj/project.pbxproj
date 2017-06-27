@@ -18,6 +18,8 @@
 		754D503F1EFFBCED00BE04AC /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 754D503E1EFFBCED00BE04AC /* Registration.storyboard */; };
 		754D50421F01B86600BE04AC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754D50411F01B86600BE04AC /* LoginViewController.swift */; };
 		754D50441F01B87800BE04AC /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754D50431F01B87800BE04AC /* SignUpViewController.swift */; };
+		754D50461F0223FB00BE04AC /* CameraCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754D50451F0223FB00BE04AC /* CameraCaptureViewController.swift */; };
+		754D50481F02245F00BE04AC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754D50471F02245F00BE04AC /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		754D503E1EFFBCED00BE04AC /* Registration.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
 		754D50411F01B86600BE04AC /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		754D50431F01B87800BE04AC /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		754D50451F0223FB00BE04AC /* CameraCaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraCaptureViewController.swift; sourceTree = "<group>"; };
+		754D50471F02245F00BE04AC /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +118,8 @@
 				754D501C1EFFBC2000BE04AC /* Info.plist */,
 				754D50141EFFBC2000BE04AC /* uHype.xcdatamodeld */,
 				754D503E1EFFBCED00BE04AC /* Registration.storyboard */,
+				754D50451F0223FB00BE04AC /* CameraCaptureViewController.swift */,
+				754D50471F02245F00BE04AC /* Extensions.swift */,
 			);
 			path = uHype;
 			sourceTree = "<group>";
@@ -283,11 +289,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				754D50461F0223FB00BE04AC /* CameraCaptureViewController.swift in Sources */,
 				754D50421F01B86600BE04AC /* LoginViewController.swift in Sources */,
 				754D50101EFFBC2000BE04AC /* ViewController.swift in Sources */,
 				754D500E1EFFBC2000BE04AC /* AppDelegate.swift in Sources */,
 				754D50161EFFBC2000BE04AC /* uHype.xcdatamodeld in Sources */,
 				754D50441F01B87800BE04AC /* SignUpViewController.swift in Sources */,
+				754D50481F02245F00BE04AC /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

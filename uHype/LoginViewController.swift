@@ -22,6 +22,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    @IBAction func login() {
+        let storyBoard = UIStoryboard.init(name: "Main", bundle: Bundle.main)
+        let tabbarVC = storyBoard.instantiateInitialViewController()
+        UIApplication.shared.keyWindow?.rootViewController = tabbarVC
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true

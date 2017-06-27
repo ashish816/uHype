@@ -83,6 +83,9 @@
                                 <state key="normal" title="Login">
                                     <color key="titleColor" red="0.01912525726" green="0.021659229240000001" blue="0.1692329545" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="login" destination="4Vu-NM-lFj" eventType="touchUpInside" id="2Y5-kc-gP9"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="klV-DN-1uX">
                                 <rect key="frame" x="67" y="516" width="236" height="27"/>
