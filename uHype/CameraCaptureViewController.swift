@@ -9,12 +9,12 @@
 import UIKit
 import AVFoundation
 
-class CameraCaptureViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class CameraCaptureViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIDocumentInteractionControllerDelegate {
     
     var imagePicker : UIImagePickerController!
     @IBOutlet var profileImageView : UIImageView?
 
-
+    var documentController :  UIDocumentInteractionController?
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -61,13 +61,47 @@ class CameraCaptureViewController: UIViewController, UIImagePickerControllerDele
         present(imagePicker!, animated: true, completion: nil)
     }
     
-    public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    open func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         picker.dismiss(animated: true, completion: nil)
+        let image : UIImage = (info[UIImagePickerControllerOriginalImage] as? UIImage)!
         self.profileImageView?.image = info[UIImagePickerControllerOriginalImage] as? UIImage
-        self.profileImageView?.layer.cornerRadius = (self.profileImageView?.bounds.width)!/2
-        self.profileImageView?.clipsToBounds = true
+        self.shareToInstagram(image: image)
     }
     
+    
+    func shareToInstagram(image : UIImage?) {
+        
+        let instagramURL = NSURL(string: "instagram://app")
+        
+        if (UIApplication.shared.canOpenURL(instagramURL! as URL)) {
+            
+            let imageData = UIImageJPEGRepresentation(image!, 100)
+            
+            let captionString = "caption"
+            
+            let writePath = (NSTemporaryDirectory() as NSString).appendingPathComponent("instagram.igo")
+            
+            
+            do {
+                try imageData?.write(to: URL(fileURLWithPath: writePath))
+                let fileURL = NSURL(fileURLWithPath: writePath)
+                
+                self.documentController = UIDocumentInteractionController(url: fileURL as URL)
+                
+                self.documentController?.delegate = self
+                
+                self.documentController?.uti = "com.instagram.exlusivegram"
+                
+                self.documentController?.annotation = NSDictionary(object: captionString, forKey: "InstagramCaption" as NSCopying)
+                self.documentController?.presentOpenInMenu(from: self.view.frame, in: self.view, animated: true)
+            } catch  {
+                print(error)
+            }
+            
+        } else {
+            print(" Instagram isn't installed ")
+        }
+    }
     
     @IBAction func logout() {
         let storyBoard = UIStoryboard.init(name: "Registration", bundle: Bundle.main)

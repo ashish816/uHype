@@ -7,12 +7,23 @@
 //
 
 import UIKit
+import Alamofire
+
+enum SignUpTextFieldTag : Int {
+    case username
+    case email
+    case fname
+    case lname
+    case password
+}
+
 
 class SignUpViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
     var currentTextField : UITextField?
     let pickerViewData = ["2015(Senior)", "2016(Junior)", "2017(Sophomore)", "2018(Freshman)"]
     
+    var signUpDictionary = ["username" : "" ,"email" : "", "firstname" : "", "lastname": "", "graduationyear": "", "graduationlevel" : "", "password": ""];
     
    lazy var graduationPickerView : UIPickerView = {
         var pickerView = UIPickerView(frame: CGRect(x:0, y:0, width : self.view.frame.width, height : 200))
@@ -55,7 +66,17 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        self.currentTextField?.text = self.pickerViewData[row]
+        
+        let titleForRow = self.pickerViewData[row]
+        
+        var graduationComponents = titleForRow.components(separatedBy: "(")
+        let graduationYear = graduationComponents[0]
+        let graduationLevel = graduationComponents[1].components(separatedBy: ")")[0]
+        
+        self.signUpDictionary["graduationyear"] = graduationYear
+        self.signUpDictionary["graduationlevel"] = graduationLevel
+        
+        self.currentTextField?.text = titleForRow
     }
     
   // MARK: Test field delegate methods
@@ -76,6 +97,20 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
         return true
     }
     
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField.tag == SignUpTextFieldTag.username.rawValue {
+            self.signUpDictionary["username"] = textField.text
+        }else if textField.tag == SignUpTextFieldTag.email.rawValue {
+            self.signUpDictionary["email"] = textField.text
+        }else if textField.tag == SignUpTextFieldTag.fname.rawValue {
+            self.signUpDictionary["firstname"] = textField.text
+        }else if textField.tag == SignUpTextFieldTag.lname.rawValue {
+            self.signUpDictionary["lastname"] = textField.text
+        }else if textField.tag == SignUpTextFieldTag.password.rawValue {
+            self.signUpDictionary["password"] = textField.text
+        }
+    }
+    
     func donePicker() {
         self.currentTextField?.resignFirstResponder()
     }
@@ -83,4 +118,18 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
     @IBAction func goBackToLoginVC() {
         dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func signUp() {
+        self.currentTextField?.resignFirstResponder()
+        print(self.signUpDictionary)
+        
+//        let signUpParam : Parameters = ["username" : "ashish816" ,"email" : "ashish88.it@gmail.com", "firstname" : "Ashish", "lastname": "Mishra", "graduationyear": "2017", "graduationlevel" : "Freshmen", "password": "12345"];
+//        let url = SERVER_PATH + "socketEmit"
+//        
+//        Alamofire.request(url, method: .post, parameters: signUpParam, encoding: JSONEncoding.default).response { (response) in
+//            print(response)
+//            
+//        }
+    }
 }
+
