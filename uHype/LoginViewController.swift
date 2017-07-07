@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import FacebookCore
+import FacebookLogin
+import FBSDKLoginKit
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
@@ -16,18 +19,55 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     var isKeyboardPresent : Bool?
     @IBOutlet weak var topLayoutConstraint : NSLayoutConstraint!
-
+    @IBOutlet weak var fbLoginButton : UIButton!
+    let loginManager = LoginManager()
+    var userInfo : UserInfo?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.registerForKeyboardNotifications()
-        // Do any additional setup after loading the view.
+  
+        fbLoginButton.addTarget(self, action: #selector(self.loginButtonClicked), for: .touchUpInside)
+        
+
+    }
+    
+    @objc func loginButtonClicked() {
+        loginManager.logIn([ .publicProfile, .email ], viewController: self) { loginResult in
+            switch loginResult {
+            case .failed(let error):
+                print(error)
+            case .cancelled:
+                print("User cancelled login.")
+            case .success(let grantedPermissions, let declinedPermissions, let accessToken):
+                print("Logged in!")
+                FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name,last_name, email "]).start(completionHandler: { (connection, result, error) -> Void in
+                    if (error == nil){
+                        let fbDetails = result as! Dictionary<String, Any>
+                        
+                        var user = UserInfo()
+                        user.firstname = fbDetails["first_name"] as! String
+                        user.lastName = fbDetails["last_name"] as! String
+                        user.emailId = fbDetails["email"] as! String
+                        print(fbDetails)
+                        self.userInfo = user
+                        self.performSegue(withIdentifier: "LoginToSignUp", sender: nil)
+                    }
+                })
+            }
+        }
     }
     
     @IBAction func createAccount() {
         
         self.isKeyboardPresent = false
+        self.performSegue(withIdentifier: "LoginToSignUp", sender: nil)
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        var destination = segue.destination as! SignUpViewController
+        destination.infoPassedFromFaceBookLogin = self.userInfo
     }
     
     func registerForKeyboardNotifications(){

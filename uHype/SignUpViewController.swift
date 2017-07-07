@@ -20,6 +20,11 @@ enum SignUpTextFieldTag : Int {
 
 class SignUpViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
+    var infoPassedFromFaceBookLogin : UserInfo?
+    @IBOutlet var emailTF : UITextField!
+    @IBOutlet var fisrtnameTF : UITextField!
+    @IBOutlet var lastnameTF: UITextField!
+    
     var currentTextField : UITextField?
     let pickerViewData = ["2015(Senior)", "2016(Junior)", "2017(Sophomore)", "2018(Freshman)"]
     
@@ -49,6 +54,12 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    
+        emailTF.text = self.infoPassedFromFaceBookLogin?.emailId
+        fisrtnameTF.text = self.infoPassedFromFaceBookLogin?.firstname
+        lastnameTF.text = self.infoPassedFromFaceBookLogin?.lastName
+
     }
   
  // MARK: Picker View delegate methods

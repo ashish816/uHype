@@ -8,6 +8,8 @@
 
 import UIKit
 import CoreData
+import FBSDKLoginKit
+import FacebookLogin
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let storyBoard = UIStoryboard.init(name: "Registration", bundle: Bundle.main)
         let registrationVC = storyBoard.instantiateInitialViewController()
         self.window?.rootViewController = registrationVC
+        
         return true
         
     }
@@ -48,6 +51,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        return FBSDKApplicationDelegate.sharedInstance()
+            .application(app,
+                         open: url as URL!,
+                         sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as! String,
+                         annotation: options[UIApplicationOpenURLOptionsKey.annotation])
     }
 
     // MARK: - Core Data stack
