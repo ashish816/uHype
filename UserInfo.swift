@@ -9,9 +9,12 @@
 import UIKit
 
 class UserInfo: NSObject {
+    
+    static let sharedInstance = UserInfo()
 
     var firstname : String?
     var lastName : String?
     var emailId : String?
     var password : String?
+    var fbId : String?
 }

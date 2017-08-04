@@ -31,13 +31,17 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 280
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.feedTableViewDataSource.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FeedTableViewCell") as! FeedTableViewCell
-        cell.feedCommentLabel.text = self.feedTableViewDataSource[indexPath.row].feedComment
+//        cell.feedCommentLabel.text = self.feedTableViewDataSource[indexPath.row].feedComment
         cell.schoolNameDateLabel.text = self.feedTableViewDataSource[indexPath.row].schoolName
         return cell
     }

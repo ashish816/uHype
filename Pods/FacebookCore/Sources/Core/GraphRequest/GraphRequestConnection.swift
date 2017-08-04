@@ -30,10 +30,10 @@ import FBSDKCoreKit.FBSDKGraphRequestConnection
  */
 open class GraphRequestConnection {
   /// A type of the closure that could be used to track network progress of a specific connection.
-  open typealias NetworkProgressHandler = (_ bytesSent: Int64, _ totalBytesSent: Int64, _ totalExpectedBytes: Int64) -> Void
+  public typealias NetworkProgressHandler = (_ bytesSent: Int64, _ totalBytesSent: Int64, _ totalExpectedBytes: Int64) -> Void
 
   /// A type of the closure that could be used to track network errors of a specific connection.
-  open typealias NetworkFailureHandler = (Error) -> Void
+  public typealias NetworkFailureHandler = (Error) -> Void
 
   /// Network progress closure that is going to be called every time data is sent to the server.
   open var networkProgressHandler: NetworkProgressHandler? = nil {

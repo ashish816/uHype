@@ -22,6 +22,15 @@
 		754D50481F02245F00BE04AC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754D50471F02245F00BE04AC /* Extensions.swift */; };
 		75681FBB1F0CB7860007296E /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75681FBA1F0CB7860007296E /* UserInfo.swift */; };
 		75681FBD1F0CC4880007296E /* UserTimeLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75681FBC1F0CC4880007296E /* UserTimeLineViewController.swift */; };
+		75DDC28D1F345BF100B38719 /* AgreementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DDC2851F345BF100B38719 /* AgreementViewController.swift */; };
+		75DDC28E1F345BF100B38719 /* FBSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DDC2861F345BF100B38719 /* FBSignUpViewController.swift */; };
+		75DDC28F1F345BF100B38719 /* FeedContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DDC2871F345BF100B38719 /* FeedContainerView.swift */; };
+		75DDC2901F345BF100B38719 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DDC2881F345BF100B38719 /* FeedTableViewCell.swift */; };
+		75DDC2911F345BF100B38719 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DDC2891F345BF100B38719 /* FeedViewController.swift */; };
+		75DDC2921F345BF100B38719 /* PhotoVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DDC28A1F345BF100B38719 /* PhotoVideoViewController.swift */; };
+		75DDC2931F345BF100B38719 /* rules.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 75DDC28B1F345BF100B38719 /* rules.pdf */; };
+		75DDC2941F345BF100B38719 /* wall.png in Resources */ = {isa = PBXBuildFile; fileRef = 75DDC28C1F345BF100B38719 /* wall.png */; };
+		75DDC2961F345C8900B38719 /* FeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DDC2951F345C8900B38719 /* FeedModel.swift */; };
 		93B2F4D0245BC09030D7AADE /* Pods_uHype.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7285F8DDE0EA2AFF5DDC65E2 /* Pods_uHype.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +74,15 @@
 		754D50471F02245F00BE04AC /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		75681FBA1F0CB7860007296E /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		75681FBC1F0CC4880007296E /* UserTimeLineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTimeLineViewController.swift; sourceTree = "<group>"; };
+		75DDC2851F345BF100B38719 /* AgreementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgreementViewController.swift; sourceTree = "<group>"; };
+		75DDC2861F345BF100B38719 /* FBSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBSignUpViewController.swift; sourceTree = "<group>"; };
+		75DDC2871F345BF100B38719 /* FeedContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedContainerView.swift; sourceTree = "<group>"; };
+		75DDC2881F345BF100B38719 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
+		75DDC2891F345BF100B38719 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		75DDC28A1F345BF100B38719 /* PhotoVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoVideoViewController.swift; sourceTree = "<group>"; };
+		75DDC28B1F345BF100B38719 /* rules.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = rules.pdf; sourceTree = "<group>"; };
+		75DDC28C1F345BF100B38719 /* wall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wall.png; sourceTree = "<group>"; };
+		75DDC2951F345C8900B38719 /* FeedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedModel.swift; sourceTree = "<group>"; };
 		81C3EFCD9FDFAE8B44203116 /* Pods-uHype.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uHype.release.xcconfig"; path = "Pods/Target Support Files/Pods-uHype/Pods-uHype.release.xcconfig"; sourceTree = "<group>"; };
 		C016B6ABAD9CFB3BD333A951 /* Pods-uHype.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uHype.debug.xcconfig"; path = "Pods/Target Support Files/Pods-uHype/Pods-uHype.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -130,6 +148,14 @@
 		754D500C1EFFBC2000BE04AC /* uHype */ = {
 			isa = PBXGroup;
 			children = (
+				75DDC2851F345BF100B38719 /* AgreementViewController.swift */,
+				75DDC2861F345BF100B38719 /* FBSignUpViewController.swift */,
+				75DDC2871F345BF100B38719 /* FeedContainerView.swift */,
+				75DDC2881F345BF100B38719 /* FeedTableViewCell.swift */,
+				75DDC2891F345BF100B38719 /* FeedViewController.swift */,
+				75DDC28A1F345BF100B38719 /* PhotoVideoViewController.swift */,
+				75DDC28B1F345BF100B38719 /* rules.pdf */,
+				75DDC28C1F345BF100B38719 /* wall.png */,
 				754D50401F01B84000BE04AC /* Registration Module */,
 				754D500D1EFFBC2000BE04AC /* AppDelegate.swift */,
 				754D500F1EFFBC2000BE04AC /* ViewController.swift */,
@@ -176,6 +202,7 @@
 		75681FB91F0CB76A0007296E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				75DDC2951F345C8900B38719 /* FeedModel.swift */,
 				75681FBA1F0CB7860007296E /* UserInfo.swift */,
 			);
 			name = Models;
@@ -309,6 +336,8 @@
 				754D503F1EFFBCED00BE04AC /* Registration.storyboard in Resources */,
 				754D50181EFFBC2000BE04AC /* Assets.xcassets in Resources */,
 				754D50131EFFBC2000BE04AC /* Main.storyboard in Resources */,
+				75DDC2931F345BF100B38719 /* rules.pdf in Resources */,
+				75DDC2941F345BF100B38719 /* wall.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,11 +414,18 @@
 				75681FBD1F0CC4880007296E /* UserTimeLineViewController.swift in Sources */,
 				754D50421F01B86600BE04AC /* LoginViewController.swift in Sources */,
 				754D50101EFFBC2000BE04AC /* ViewController.swift in Sources */,
+				75DDC28F1F345BF100B38719 /* FeedContainerView.swift in Sources */,
+				75DDC2901F345BF100B38719 /* FeedTableViewCell.swift in Sources */,
+				75DDC2921F345BF100B38719 /* PhotoVideoViewController.swift in Sources */,
+				75DDC2911F345BF100B38719 /* FeedViewController.swift in Sources */,
 				754D500E1EFFBC2000BE04AC /* AppDelegate.swift in Sources */,
 				75681FBB1F0CB7860007296E /* UserInfo.swift in Sources */,
 				754D50161EFFBC2000BE04AC /* uHype.xcdatamodeld in Sources */,
+				75DDC28E1F345BF100B38719 /* FBSignUpViewController.swift in Sources */,
+				75DDC28D1F345BF100B38719 /* AgreementViewController.swift in Sources */,
 				754D50441F01B87800BE04AC /* SignUpViewController.swift in Sources */,
 				754D50481F02245F00BE04AC /* Extensions.swift in Sources */,
+				75DDC2961F345C8900B38719 /* FeedModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,7 +582,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = DVT26A466Y;
 				INFOPLIST_FILE = uHype/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.oolie.oolie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -561,7 +597,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = DVT26A466Y;
 				INFOPLIST_FILE = uHype/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.oolie.oolie;
 				PRODUCT_NAME = "$(TARGET_NAME)";

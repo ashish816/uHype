@@ -141,7 +141,7 @@ extension UserProfile {
    - parameter completion: Optional closure to be executed once the profile is refreshed. Default: `nil`.
    */
   public func refresh(_ completion: Completion?) {
-    UserProfile.fetch(userId: userId) { result in
+    UserProfile.fetch(userId) { result in
       completion?(result)
     }
   }

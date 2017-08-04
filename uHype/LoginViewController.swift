@@ -45,10 +45,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     if (error == nil){
                         let fbDetails = result as! Dictionary<String, Any>
                         
-                        var user = UserInfo()
+                        var user = UserInfo.sharedInstance
                         user.firstname = fbDetails["first_name"] as! String
                         user.lastName = fbDetails["last_name"] as! String
                         user.emailId = fbDetails["email"] as! String
+                        user.fbId = fbDetails["id"] as! String
                         print(fbDetails)
                         self.userInfo = user
                         self.performSegue(withIdentifier: "LoginToSignUp", sender: nil)
