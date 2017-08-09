@@ -162,11 +162,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="school" translatesAutoresizingMaskIntoConstraints="NO" id="cST-Gn-bkS">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="school" translatesAutoresizingMaskIntoConstraints="NO" id="cST-Gn-bkS">
                                 <rect key="frame" x="0.0" y="64" width="110" height="111"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="110" id="VEp-2v-1pi"/>
-                                    <constraint firstAttribute="height" constant="110" id="nOk-VK-a64"/>
+                                    <constraint firstAttribute="height" constant="111" id="nOk-VK-a64"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="school" translatesAutoresizingMaskIntoConstraints="NO" id="ckp-bv-gKA">
@@ -221,7 +221,7 @@
                             <constraint firstItem="mWq-ar-gQE" firstAttribute="leading" secondItem="inU-wx-G1n" secondAttribute="leading" id="ZMC-ru-4KB"/>
                             <constraint firstItem="ckp-bv-gKA" firstAttribute="leading" secondItem="5xE-Tc-ml6" secondAttribute="trailing" constant="40" id="ZZH-uh-rh4"/>
                             <constraint firstItem="cST-Gn-bkS" firstAttribute="top" secondItem="VRH-V8-I7x" secondAttribute="bottom" id="aAg-E4-VJa"/>
-                            <constraint firstItem="mWq-ar-gQE" firstAttribute="top" secondItem="cST-Gn-bkS" secondAttribute="bottom" constant="8" id="cNp-ig-8pG"/>
+                            <constraint firstItem="mWq-ar-gQE" firstAttribute="top" secondItem="cST-Gn-bkS" secondAttribute="bottom" constant="7" id="cNp-ig-8pG"/>
                             <constraint firstItem="5xE-Tc-ml6" firstAttribute="top" secondItem="VRH-V8-I7x" secondAttribute="bottom" constant="11" id="ecf-j0-if2"/>
                             <constraint firstItem="um3-1r-u3a" firstAttribute="top" secondItem="5xE-Tc-ml6" secondAttribute="bottom" constant="13" id="f8q-mL-du9"/>
                             <constraint firstAttribute="trailing" secondItem="69U-PB-vu1" secondAttribute="trailing" id="hsQ-eC-Uhj"/>
@@ -233,7 +233,7 @@
                     <navigationItem key="navigationItem" id="NU8-ki-xpO"/>
                     <connections>
                         <outlet property="containerView" destination="69U-PB-vu1" id="vKn-Yr-RwZ"/>
-                        <outlet property="profileImageView" destination="cST-Gn-bkS" id="5hd-wl-k1w"/>
+                        <outlet property="profileImageView" destination="cST-Gn-bkS" id="Tx9-Jq-NAX"/>
                         <outlet property="segmentedControl" destination="mWq-ar-gQE" id="jXz-Bq-wnw"/>
                     </connections>
                 </viewController>

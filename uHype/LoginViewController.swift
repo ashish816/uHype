@@ -52,7 +52,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                         user.fbId = fbDetails["id"] as! String
                         print(fbDetails)
                         self.userInfo = user
-                        self.performSegue(withIdentifier: "LoginToSignUp", sender: nil)
+                        self.performSegue(withIdentifier: "LoginToFBSignUp", sender: nil)
                     }
                 })
             }
@@ -67,8 +67,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var destination = segue.destination as! SignUpViewController
-        destination.infoPassedFromFaceBookLogin = self.userInfo
+        
+        if segue.identifier == "LoginToSignUp" {
+            var destination = segue.destination as! SignUpViewController
+            destination.infoPassedFromFaceBookLogin = self.userInfo
+        }else if segue.identifier == "LoginToFBSignUp" {
+            var destination = segue.destination as! FBSignUpViewController
+            destination.infoPassedFromFaceBookLogin = self.userInfo
+        }
+      
     }
     
     func registerForKeyboardNotifications(){
